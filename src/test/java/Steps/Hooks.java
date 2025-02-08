@@ -13,7 +13,7 @@ public class Hooks {
     public void setUp() {
         // Start Playwright
         playwright.set(Playwright.create());
-        browser.set(playwright.get().chromium().launch(new BrowserType.LaunchOptions().setHeadless(false)));
+        browser.set(playwright.get().chromium().launch(new BrowserType.LaunchOptions().setHeadless(true)));
         page.set(browser.get().newPage());
         
         System.out.println("Browser launched for thread: " + Thread.currentThread());
