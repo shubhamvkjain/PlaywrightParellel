@@ -20,10 +20,14 @@ jobs:
       run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
     - name: Run tests
       run: mvn test
+	- name: Generate Cucumber Reports
+	       if: always()
+	       run: mvn verify -DskipTests
+	       
 	- name: Store Cucumber Reports
-	        if: always()
-	        uses: actions/upload-artifact@v3
-	        with:
-	          name: cucumber-report
-	          path: target/cucumber-reports
+	       if: always()
+	       uses: actions/upload-artifact@v3
+	       with:
+	         name: cucumber-report
+	         path: target/cucumber-reports
 	
