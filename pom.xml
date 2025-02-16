@@ -59,8 +59,7 @@
                         <cucumber.junit.execution.parallel.config.fixed.parallelism>4</cucumber.junit.execution.parallel.config.fixed.parallelism>
                     </systemPropertyVariables>
                 </configuration>
-           
-
+            </plugin>
         </plugins>
     </build>
     
