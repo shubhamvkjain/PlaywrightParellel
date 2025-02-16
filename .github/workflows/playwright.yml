@@ -19,7 +19,7 @@ jobs:
     - name: Ensure browsers are installed
       run: mvn exec:java -e -D exec.mainClass=com.microsoft.playwright.CLI -D exec.args="install --with-deps"
     - name: Run tests
-      run: mvn test
+      run: mvn test -Dcucumber.plugin=pretty,json:target/cucumber-reports/cucumber.json
 	- name: Generate Cucumber Report
 	  run: mvn verify
 	- name: Upload Cucumber Reports
