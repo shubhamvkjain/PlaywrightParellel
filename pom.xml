@@ -35,15 +35,7 @@
     <scope>test</scope>
 </dependency>
 
-<dependency>
 
-        <groupId>net.masterthought</groupId>
-
-        <artifactId>maven-cucumber-reporting</artifactId>
-
-        <version>5.7.0</version>
-
-    </dependency>
 
 </dependencies>
 <build>
@@ -67,30 +59,7 @@
                         <cucumber.junit.execution.parallel.config.fixed.parallelism>4</cucumber.junit.execution.parallel.config.fixed.parallelism>
                     </systemPropertyVariables>
                 </configuration>
-            </plugin>
-             <groupId>net.masterthought</groupId>
-    <artifactId>maven-cucumber-reporting</artifactId>
-    <version>5.7.0</version>
-    <executions>
-        <execution>
-            <id>execution</id>
-            <phase>verify</phase>
-            <goals>
-                <goal>generate</goal>
-            </goals>
-            <configuration>
-                <projectName>Playwright Cucumber Tests</projectName>
-                <outputDirectory>${project.build.directory}/cucumber-reports</outputDirectory>
-                <inputDirectory>${project.build.directory}</inputDirectory>
-                <jsonFiles>
-                    <param>**/*.json</param>
-                </jsonFiles>
-                <classificationFiles>
-                    <param>**/classifications.properties</param>
-                </classificationFiles>
-            </configuration>
-        </execution>
-    </executions>
+           
 
         </plugins>
     </build>
